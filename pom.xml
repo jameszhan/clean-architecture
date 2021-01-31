@@ -14,7 +14,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <mybatis-starter.version>1.3.5</mybatis-starter.version>
-        <spring-boot.version>2.2.13.RELEASE</spring-boot.version>
+        <spring-boot.version>2.3.2.RELEASE</spring-boot.version>
+        <spring-cloud-alibaba.version>2.2.4.RELEASE</spring-cloud-alibaba.version>
         <swagger.version>2.10.5</swagger.version>
     </properties>
 
@@ -28,31 +29,6 @@
 
     <dependencyManagement>
         <dependencies>
-
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>30.1-jre</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>1.7.30</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid</artifactId>
-                <version>1.2.4</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>1.2.75</version>
-            </dependency>
-
             <!--Project modules-->
             <dependency>
                 <groupId>clean.architecture</groupId>
@@ -88,13 +64,21 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
-                <version>2.2.13.RELEASE</version>
+                <version>${spring-boot.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-starter-tomcat</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
             <dependency>
@@ -146,6 +130,30 @@
             <!--Validation API End -->
 
             <!-- Misc -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>30.1-jre</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.30</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.2.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.75</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.reflections</groupId>
                 <artifactId>reflections</artifactId>

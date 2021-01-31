@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: clean-architecture
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.71:8848
+        group: DUBBO
+        enabled: true
+      config:
+        server-addr: 192.168.1.71:8848
+        namespace: public
+        group: DEFAULT_GROUP
+        file-extension: yaml
+        extension-configs:
+        - data-id: application.yaml
+          group: REFRESH_GROUP
+          refresh-enabled: on
+
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+
+#app:
+#  name: spring boot application
+#  api:
+#    title: Spring Boot APIs
+#    version: 1.0.0
+#    description: Spring Boot APIs description
+#    base-package: clean.architecture.web
+#    contact-name: James Zhan
+#    contact-email: zhiqiangzhan@gmail.com
+#    swagger:
+#      enable: true
